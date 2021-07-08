@@ -30,7 +30,7 @@ def getpath(root='.',is_train=True):
 def my_compress(src_dir,dst_dir,relative_path,encode="bpgenc",decode='bpgdec',quantit=1):
     src = os.path.join(src_dir,relative_path)
     dst = os.path.join(dst_dir,relative_path[:-4]+".bpg")
-    dst_dec = os.path.join(src_dir,relative_path[:-4]+".PNG")
+    dst_dec = os.path.join(dst_dir,relative_path[:-4]+".PNG")
     #print(encode+" -f 444 -o "+ dst+" -q "+str(quantit)+" "+src )
     os.system(encode+" -f 444 -o "+ dst+" -q "+str(quantit)+" "+src )
     os.system(decode+" -o "+dst_dec +" "+dst)
